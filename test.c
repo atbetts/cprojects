@@ -21,6 +21,11 @@ int main (){
  return EXIT_SUCCESS;
 } 
 
+int commitGit(){
+/*Testing GITHUB commit*/
+
+return 1;
+}
 
 int triangleDot(int row){
 return (row*(row+1))/2;
