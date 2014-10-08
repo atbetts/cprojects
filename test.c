@@ -1,27 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZEARR(x) (sizeof(x)/sizeof(x[0]))
-int* selectionSort(int* arr);
+int* selectionSort(int* arr, int size);
 
 
 int main (){
 
 int test[10] = {1,2,3,4,5,3,3,1,0,2};
 
-selectionSort(test);
+selectionSort(test,10);
 
 return 0;
 
 }
 
-int printDisplay(int * arr){
+int printDisplay(int * arr,int size){
 
 /* 
 Prints a graphical display of an array
 of ints as lines of asteriks on each new line 
 */
 
-for(int j =0; j<SIZEARR(arr) ; j++){
+for(int j =0; j<size; j++){
 for(int i =0; i<arr[j]; i++)
 printf("*");
 printf("\n");
@@ -42,7 +42,7 @@ arr[b]=temp;
 return 1;
 }
 
-int* selectionSort (int * arr){
+int* selectionSort (int * arr, int size){
 /*
 Sorts a list of ints in descending order
 by swapping the first element in each
@@ -50,7 +50,6 @@ increasingly smaller list with the max of
 said list
 */
 
-int size = (int)SIZEARR(arr);
 
  int max,i,j;
  for(i =0;i<size;i++){
@@ -62,9 +61,9 @@ int size = (int)SIZEARR(arr);
  }
  swap(i,max,arr);
 
- printDisplay(arr);
+ printDisplay(arr,size);
 
- printf("Press Enter to continue.\n");
+ printf("Press any key to continue.\n");
 
  getchar();
 
